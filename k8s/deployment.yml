@@ -39,18 +39,18 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web
+  name: front
 spec:
   selector:
     matchLabels:
-      app: web
+      app: front
   template:
     metadata:
       labels:
-        app: web
+        app: front
     spec:
       containers:
-      - name: web
+      - name: front
         image: geraldo72/rotten-potatoes:v2
         ports:
         - containerPort: 5000
@@ -72,7 +72,7 @@ metadata:
   name: web
 spec:
   selector:
-    app: web
+    app: front
   ports:
   - port: 80
     targetPort: 5000
